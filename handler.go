@@ -35,6 +35,7 @@ type pathConfig struct {
 	repo    string
 	display string
 	vcs     string
+	host    string
 }
 
 func newHandler(config []byte) (*handler, error) {
@@ -44,6 +45,7 @@ func newHandler(config []byte) (*handler, error) {
 			Repo    string `yaml:"repo,omitempty"`
 			Display string `yaml:"display,omitempty"`
 			VCS     string `yaml:"vcs,omitempty"`
+			Host    string `yaml:"host,omitempty"`
 		} `yaml:"paths,omitempty"`
 	}
 	if err := yaml.Unmarshal(config, &parsed); err != nil {
@@ -56,6 +58,7 @@ func newHandler(config []byte) (*handler, error) {
 			repo:    e.Repo,
 			display: e.Display,
 			vcs:     e.VCS,
+			host:    e.Host,
 		}
 		switch {
 		case e.Display != "":
@@ -100,7 +103,13 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		Display string
 		VCS     string
 	}{
-		Import:  h.Host(r) + pc.path,
+		Import: func() string {
+			if pc.host != "" {
+				return pc.host
+			} else {
+				return h.Host(r)
+			}
+		}() + pc.path,
 		Repo:    pc.repo,
 		Display: pc.display,
 		VCS:     pc.vcs,
