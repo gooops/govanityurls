@@ -64,6 +64,7 @@ paths:
     repo: https://github.com/example/foo
     display: "https://github.com/example/foo https://github.com/example/foo/tree/master{/dir} https://github.com/example/foo/blob/master{/dir}/{file}#L{line}"
     vcs: git
+    host: golang.org
 ```
 
 <table>
