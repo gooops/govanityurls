@@ -1,8 +1,85 @@
-host: rakyll.pizza
-
+host: golang.org
 paths:
-  /portmidi:
-    repo: https://github.com/rakyll/portmidi
+  /x/experiments:
+    repo: https://github.com/bigwhite/experiments
+    vcs: git
 
-  /launchpad:
-    repo: https://github.com/rakyll/launchpad
+  /x/sys:
+    repo: https://github.com/golang/sys
+    vcs: git
+
+  /x/crypto:
+    repo: https://github.com/golang/crypto
+    vcs: git
+
+ 
+  /x/mobile:
+    repo: https://github.com/golang/mobile
+    vcs: git
+
+  /x/net:
+    repo: https://github.com/golang/net
+    vcs: git
+
+  /x/exp:
+    repo: https://github.com/golang/exp
+    vcs: git
+
+  /x/image:
+    repo: https://github.com/golang/image
+    vcs: git
+
+  /x/time:
+    repo: https://github.com/golang/time
+    vcs: git
+
+  /x/sync:
+    repo: https://github.com/golang/sync
+    vcs: git
+
+  /x/review:
+    repo: https://github.com/golang/review
+    vcs: git
+
+  /x/tour:
+    repo: https://github.com/golang/tour
+    vcs: git
+
+  /x/tools:
+    repo: https://github.com/golang/tools
+    vcs: git
+
+  /x/oauth2:
+    repo: https://github.com/golang/oauth2
+    vcs: git
+
+  /x/text:
+    repo: https://github.com/golang/text
+    display: "https://github.com/golang/text https://github.com/golang/text/tree/master{/dir} https://github.com/golang/text/blob/master{/dir}/{file}#L{line}"
+    vcs: git
+
+  /genproto:
+    repo: https://github.com/google/go-genproto
+    host: google.golang.org
+    vcs: git
+
+  /grpc:
+    repo: https://github.com/grpc/grpc-go
+    host: google.golang.org
+    vcs: git
+
+  /appengine:
+    repo: https://github.com/golang/appengine
+    host: google.golang.org
+    vcs: git
+
+  /go:
+    repo: https://github.com/GoogleCloudPlatform/google-cloud-go
+    vcs: git
+    host: cloud.google.com
+    display: "https://github.com/GoogleCloudPlatform/gcloud-golang https://github.com/GoogleCloudPlatform/gcloud-golang/tree/master{/dir} https://github.com/GoogleCloudPlatform/gcloud-golang/tree/master{/dir}/{file}#L{line}"
+
+  /cloud:
+    repo: https://github.com/GoogleCloudPlatform/google-cloud-go
+    vcs: git
+    host: google.golang.org
